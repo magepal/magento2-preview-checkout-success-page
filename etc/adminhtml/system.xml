@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © MagePal LLC. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magepal" sortOrder="400" translate="label">
+            <label>MagePal</label>
+        </tab>
+        <section id="magepal_checkout" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="5" translate="label">
+            <label>Checkout</label>
+            <tab>magepal</tab>
+            <resource>MagePal_PreviewCheckoutSuccessPage::config_magepal_previewcheckoutsuccesspage</resource>
+            <group id="preview_success_page" showInDefault="1" showInStore="1" showInWebsite="0" sortOrder="100" translate="label">
+                <label>Preview Success Page</label>
+                <field id="module_version" translate="label" type="label" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Module Version</label>
+                    <frontend_model>MagePal\PreviewCheckoutSuccessPage\Block\Adminhtml\System\Config\Form\Module\Version</frontend_model>
+                </field>
+                <field id="composer_version" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Composer Version</label>
+                    <frontend_model>MagePal\PreviewCheckoutSuccessPage\Block\Adminhtml\System\Config\Form\Composer\Version</frontend_model>
+                </field>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="valid_for" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Valid for</label>
+                    <comment>Minimum of 3 minutes and Maximum of 15 minutes</comment>
+                    <validate>validate-zero-or-greater required-entry validate-number-range-3-15 validate-digits required-entry</validate>
+                    <backend_model>MagePal\PreviewCheckoutSuccessPage\Model\Config\Backend\ValidFor</backend_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+
+                <field id="order_increment" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Order ID</label>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                    <frontend_model>MagePal\PreviewCheckoutSuccessPage\Block\Adminhtml\System\Config\Form\Field\OrderIncrement</frontend_model>
+                </field>
+
+                <field id="modify_timestamp" translate="label" type="hidden" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <backend_model>MagePal\PreviewCheckoutSuccessPage\Model\Config\Backend\ModifyTimestamp</backend_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+
+                <field id="access_code" translate="label" type="hidden" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <backend_model>MagePal\PreviewCheckoutSuccessPage\Model\Config\Backend\AccessCode</backend_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="preview" type="label" translate="label comment" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>HTML and Scripts</label>
+                    <frontend_model>MagePal\PreviewCheckoutSuccessPage\Block\Adminhtml\System\Config\Form\Field\Preview</frontend_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

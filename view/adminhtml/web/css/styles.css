@@ -1,0 +1,5 @@
+#row_magepal_checkout_preview_success_page_modify_timestamp, #row_magepal_checkout_preview_success_page_access_code{
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}

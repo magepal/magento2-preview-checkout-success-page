@@ -1,0 +1,34 @@
+{
+    "name": "magepal/magento2-preview-checkout-success-page",
+    "description": "Quickly and easily preview and test your Magento2 checkout success page, without the need to placing a new order each time",
+    "keywords": [
+        "magento 2",
+        "magento2",
+        "How to test or style the order success page",
+        "checkout success page",
+        "style checkout",
+        "one step checkout previewer"
+    ],
+    "require": {
+        "php": "~5.6.0|7.0.2|7.0.4|~7.0.6|~7.1.0",
+        "magento/module-backend": "100.0.*|100.1.*|100.2.*",
+        "magento/framework": "100.0.*|100.1.*|101.0.*"
+    },
+    "suggest": {
+        "magepal/magento2-checkout-success-misc-script":"Add miscellaneous HTML and scripts to your checkout success page"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MagePal\\PreviewCheckoutSuccessPage\\": ""
+        }
+    }
+}
