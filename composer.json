@@ -1,13 +1,15 @@
 {
     "name": "magepal/magento2-preview-checkout-success-page",
-    "description": "Quickly and easily preview and test your Magento2 checkout success page, without the need to placing a new order each time",
+    "description": "Quickly and easily preview and test your Magento2 checkout confirmation page, without the need to placing a new order each time",
     "keywords": [
         "magento 2",
         "magento2",
         "How to test or style the order success page",
         "checkout success page",
         "style checkout",
-        "one step checkout previewer"
+        "one step checkout previewer",
+        "order confirmation page preview",
+        "magento order confirmation styling"
     ],
     "require": {
         "php": "~5.6.0|7.0.2|7.0.4|~7.0.6|~7.1.0",
