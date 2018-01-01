@@ -1,5 +1,5 @@
-## Preview Success Page for Magento 2
-This extension allows you to quickly and easily preview and test your magento2 checkout success page, without the need to placing a new order each time.
+## Preview Checkout Success Page for Magento 2
+This extension allows you to quickly and easily preview and test your magento2 order confirmation page, without the need to placing a new order each time.
 
 ![How to test or style the order success page](https://user-images.githubusercontent.com/1415141/32975104-f3a99442-cbd1-11e7-9aad-2914395a07e0.gif)
 
@@ -11,7 +11,7 @@ This extension allows you to quickly and easily preview and test your magento2 c
 - Created for testing sites but work perfectly on live/production environment.
 - Save time when style checkout success page.
 
-###Production usage
+### Production usage
 
 This module was intended for development, testing, and staging environment. Please consider carefully before using in a production environment because it may affect your analytics/conversion data.
 
