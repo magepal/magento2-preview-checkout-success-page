@@ -10,7 +10,6 @@ class ValidFor extends \Magento\Framework\App\Config\Value
     const MAX_ACCESS_TIME = 15;
     const MIN_ACCESS_TIME = 3;
 
-
     /**
      * @return $this
      */
@@ -18,10 +17,9 @@ class ValidFor extends \Magento\Framework\App\Config\Value
     {
         $value = (int)$this->getValue();
 
-        if($value < self::MIN_ACCESS_TIME){
+        if ($value < self::MIN_ACCESS_TIME) {
             $value = self::MIN_ACCESS_TIME;
-        }
-        elseif ($value > self::MAX_ACCESS_TIME){
+        } elseif ($value > self::MAX_ACCESS_TIME) {
             $value = self::MAX_ACCESS_TIME;
         }
 

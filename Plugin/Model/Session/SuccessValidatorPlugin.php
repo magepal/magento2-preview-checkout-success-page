@@ -40,8 +40,7 @@ class SuccessValidatorPlugin
         \Magento\Checkout\Model\Session $checkoutSession,
         \Magento\Sales\Model\ResourceModel\Order\CollectionFactory $orderCollectionFactory,
         \Magento\Framework\Stdlib\DateTime\TimezoneInterface $localeDate
-    )
-    {
+    ) {
         $this->dataHelper = $dataHelper;
         $this->request = $request;
         $this->checkoutSession = $checkoutSession;
@@ -51,15 +50,14 @@ class SuccessValidatorPlugin
 
     public function afterIsValid(\Magento\Checkout\Model\Session\SuccessValidator $subject, $result)
     {
-
-        if($this->dataHelper->isEnabled()
+        if ($this->dataHelper->isEnabled()
             && $this->isValidAccessCode()
             && $this->dataHelper->getOrderIncrement()
-        ){
+        ) {
             /** @var \Magento\Sales\Model\Order $order */
             $order = $this->getOrderByIncrementId($this->dataHelper->getOrderIncrement());
 
-            if($order->getId()){
+            if ($order->getId()) {
                 $this->checkoutSession
                     ->setLastOrderId($order->getId())
                     ->setLastRealOrderId($order->getIncrementId())
@@ -72,7 +70,6 @@ class SuccessValidatorPlugin
         return $result;
     }
 
-
     public function getOrderByIncrementId($increment_id)
     {
         $collection = $this->orderCollectionFactory->create();
@@ -82,18 +79,18 @@ class SuccessValidatorPlugin
         return $collection->getFirstItem();
     }
 
-    protected function isValidAccessCode(){
+    protected function isValidAccessCode()
+    {
         $accessCode = $this->request->getParam('previewAccessCode', null);
 
-        if($accessCode
+        if ($accessCode
             && $accessCode === $this->dataHelper->getAccessCode()
             && ($this->dataHelper->getModifyTimestamp() + 60 * $this->dataHelper->getValidFor())
                 > $this->localeDate->scopeTimeStamp(ScopeConfigInterface::SCOPE_TYPE_DEFAULT)
-        ){
+        ) {
             return true;
         }
 
         return false;
     }
-
 }

@@ -7,7 +7,6 @@ namespace MagePal\PreviewCheckoutSuccessPage\Model\Config\Backend;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 
-
 class ModifyTimestamp extends \Magento\Framework\App\Config\Value
 {
 
@@ -39,7 +38,6 @@ class ModifyTimestamp extends \Magento\Framework\App\Config\Value
         array $data = []
 
     ) {
-
         $this->localeDate = $localeDate;
         parent::__construct($context, $registry, $config, $cacheTypeList, $resource, $resourceCollection, $data);
     }
@@ -49,7 +47,6 @@ class ModifyTimestamp extends \Magento\Framework\App\Config\Value
      */
     public function beforeSave()
     {
-
         $this->setValue($this->localeDate->scopeTimeStamp(ScopeConfigInterface::SCOPE_TYPE_DEFAULT));
 
         parent::beforeSave();

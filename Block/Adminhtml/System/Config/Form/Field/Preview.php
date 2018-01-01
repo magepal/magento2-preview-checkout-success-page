@@ -7,6 +7,7 @@
 namespace MagePal\PreviewCheckoutSuccessPage\Block\Adminhtml\System\Config\Form\Field;
 
 use Magento\Config\Block\System\Config\Form\Field;
+
 /**
  * Class Locations Backend system config array field renderer
  */
@@ -22,8 +23,7 @@ class Preview extends Field
         \Magento\Backend\Block\Template\Context $context,
         \Magento\Framework\Url $urlHelper,
         array $data = []
-    )
-    {
+    ) {
         $this->urlHelper = $urlHelper;
         parent::__construct($context, $data);
     }
@@ -33,18 +33,14 @@ class Preview extends Field
      */
     protected $_template = 'MagePal_PreviewCheckoutSuccessPage::system/config/form/field/preview.phtml';
 
-
     public function render(\Magento\Framework\Data\Form\Element\AbstractElement $element)
     {
         $element->unsScope()->unsCanUseWebsiteValue()->unsCanUseDefaultValue();
 
-
         $html = '<td colspan="3">' . $this->_renderValue($element) . '</td>';
-
 
         return $this->_decorateRowHtml($element, $html);
     }
-
 
     protected function _renderValue(\Magento\Framework\Data\Form\Element\AbstractElement $element)
     {
@@ -81,7 +77,6 @@ class Preview extends Field
         return $store;
     }
 
-
     public function getSuccessPageUrl()
     {
         $store = $this->getCurrentStore();
@@ -97,6 +92,4 @@ class Preview extends Field
 
         return $this->urlHelper->setScope($store->getId())->getUrl('checkout/onepage/success', $routeParams);
     }
-
-
 }

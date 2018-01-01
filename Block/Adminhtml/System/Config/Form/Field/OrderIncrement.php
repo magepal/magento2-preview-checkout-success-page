@@ -23,8 +23,7 @@ class OrderIncrement extends \Magento\Config\Block\System\Config\Form\Field
         \Magento\Backend\Block\Template\Context $context,
         \Magento\Sales\Model\ResourceModel\Order\CollectionFactory $orderCollectionFactory,
         array $data = []
-    )
-    {
+    ) {
         parent::__construct($context, $data);
         $this->orderCollectionFactory = $orderCollectionFactory;
     }
@@ -39,20 +38,18 @@ class OrderIncrement extends \Magento\Config\Block\System\Config\Form\Field
     {
         $this->setElement($element);
 
-        if(!$element->getEscapedValue()){
+        if (!$element->getEscapedValue()) {
 
             /** @var \Magento\Sales\Model\Order $order */
             $order = $this->getLastOrder();
 
-            if($order->getId()){
+            if ($order->getId()) {
                 $element->setValue($order->getIncrementId());
             }
-
         }
 
         return parent::_getElementHtml($element);
     }
-
 
     /**
      * @return \Magento\Store\Api\Data\StoreInterface|null
@@ -71,11 +68,11 @@ class OrderIncrement extends \Magento\Config\Block\System\Config\Form\Field
         return $store;
     }
 
-
     /**
      * @return \Magento\Framework\DataObject
      */
-    public function getLastOrder(){
+    public function getLastOrder()
+    {
         $store = $this->getCurrentStore();
         $collection = $this->orderCollectionFactory->create();
         $collection->addFieldToFilter('store_id', $store->getId())
@@ -85,5 +82,4 @@ class OrderIncrement extends \Magento\Config\Block\System\Config\Form\Field
 
         return $collection->getFirstItem();
     }
-
 }

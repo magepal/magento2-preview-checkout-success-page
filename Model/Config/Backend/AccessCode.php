@@ -36,11 +36,9 @@ class AccessCode extends \Magento\Framework\App\Config\Value
         array $data = []
 
     ) {
-
         $this->random = $random;
         parent::__construct($context, $registry, $config, $cacheTypeList, $resource, $resourceCollection, $data);
     }
-
 
     /**
      * @return $this
