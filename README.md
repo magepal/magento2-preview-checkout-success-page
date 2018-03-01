@@ -1,3 +1,5 @@
+<a href="http://www.magepal.com" ><img src="https://image.ibb.co/dHBkYH/Magepal_logo.png" width="100" align="right" /></a>
+
 ## Preview Checkout Success Page for Magento 2
 
 [![Total Downloads](https://poser.pugx.org/magepal/magento2-preview-checkout-success-page/downloads)](https://packagist.org/packages/magepal/magento2-preview-checkout-success-page)
