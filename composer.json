@@ -17,10 +17,14 @@
         "proprietary"
     ],
     "homepage": "http://www.magepal.com/",
+    "support": {
+        "email": "support@magepal.org",
+        "issues": "https://github.com/magepal/magento2-preview-checkout-success-page/issues/"
+    },
     "authors": [
         {
-            "name": "MagePal",
-            "email": "hello@magepal.com",
+            "name": "Renon Stewart",
+            "email": "renon@magepal.com",
             "homepage": "http://www.magepal.com/",
             "role": "Leader"
         }
@@ -34,7 +38,7 @@
         "magepal/magento2-checkout-success-misc-script":"Add miscellaneous HTML and scripts to your checkout success page"
     },
     "type": "magento2-module",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "autoload": {
         "files": [
             "registration.php"
