@@ -5,7 +5,11 @@
 [![Total Downloads](https://poser.pugx.org/magepal/magento2-preview-checkout-success-page/downloads)](https://packagist.org/packages/magepal/magento2-preview-checkout-success-page)
 [![Latest Stable Version](https://poser.pugx.org/magepal/magento2-preview-checkout-success-page/v/stable)](https://packagist.org/packages/magepal/magento2-preview-checkout-success-page)
 
-This extension allows you to quickly and easily preview and test your magento2 order confirmation page, without placing a new order each time.
+Styling and testing Magento's order confirmation page can be a very difficult and time-consuming process since the order success page display is only displayed once after completing the lengthy checkout process. Changing your page content or testing a new CSS style will automatically redirect you to an empty shopping cart page on page refresh.
+
+Our free magento2 extension allows you to easily test, preview and make changes to your success page without placing a new order or modifying Magento's core code. After installing our extension you can navigate to the module preference in store configuration section and specify an order number and then preview the success page for that order, view the HTML source to search for specific javascript snippet or share a link to preview on other devices. For security, the generated link is only valid for a short period of time which can be changed base on your needs.
+
+To avoid tracking of duplicate order information on your live site, you may want to limit usage and testing of our extension to your development environment with google analytics and order tracking script disabled.
 
 ![How to test or style the order success page](https://image.ibb.co/h9ssDH/Preview_Checkout_Success_Page_for_Magento.gif)
 
