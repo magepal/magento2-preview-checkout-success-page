@@ -14,12 +14,22 @@ use Magento\Config\Block\System\Config\Form\Field;
  */
 class Preview extends Field
 {
+    /**
+     * @var string
+     */
+    protected $_template = 'MagePal_PreviewCheckoutSuccessPage::system/config/form/field/preview.phtml';
 
     /**
      * @var \Magento\Framework\Url
      */
     protected $urlHelper;
 
+    /**
+     * Preview constructor.
+     * @param \Magento\Backend\Block\Template\Context $context
+     * @param \Magento\Framework\Url $urlHelper
+     * @param array $data
+     */
     public function __construct(
         \Magento\Backend\Block\Template\Context $context,
         \Magento\Framework\Url $urlHelper,
@@ -29,11 +39,11 @@ class Preview extends Field
         parent::__construct($context, $data);
     }
 
-    /**
-     * @var string
-     */
-    protected $_template = 'MagePal_PreviewCheckoutSuccessPage::system/config/form/field/preview.phtml';
 
+    /**
+     * @param \Magento\Framework\Data\Form\Element\AbstractElement $element
+     * @return string
+     */
     public function render(\Magento\Framework\Data\Form\Element\AbstractElement $element)
     {
         $element->unsScope()->unsCanUseWebsiteValue()->unsCanUseDefaultValue();
@@ -43,6 +53,10 @@ class Preview extends Field
         return $this->_decorateRowHtml($element, $html);
     }
 
+    /**
+     * @param \Magento\Framework\Data\Form\Element\AbstractElement $element
+     * @return string
+     */
     protected function _renderValue(\Magento\Framework\Data\Form\Element\AbstractElement $element)
     {
         return $this->_getElementHtml($element);
@@ -78,6 +92,9 @@ class Preview extends Field
         return $store;
     }
 
+    /**
+     * @return string
+     */
     public function getSuccessPageUrl()
     {
         $store = $this->getCurrentStore();
