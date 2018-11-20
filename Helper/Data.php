@@ -29,7 +29,10 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function isEnabled()
     {
-        return $this->scopeConfig->isSetFlag(self::XML_PATH_ACTIVE, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        return $this->scopeConfig->isSetFlag(
+            self::XML_PATH_ACTIVE,
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+        );
     }
 
     /**
@@ -38,7 +41,10 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function getAccessCode()
     {
-        return $this->scopeConfig->getValue('magepal_checkout/preview_success_page/access_code', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        return $this->scopeConfig->getValue(
+            'magepal_checkout/preview_success_page/access_code',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+        );
     }
 
     /**
@@ -47,7 +53,10 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function getOrderIncrement()
     {
-        return $this->scopeConfig->getValue('magepal_checkout/preview_success_page/order_increment', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        return $this->scopeConfig->getValue(
+            'magepal_checkout/preview_success_page/order_increment',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+        );
     }
 
     /**
@@ -56,7 +65,10 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function getValidFor()
     {
-        $value = $this->scopeConfig->getValue('magepal_checkout/preview_success_page/valid_for', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        $value = $this->scopeConfig->getValue(
+            'magepal_checkout/preview_success_page/valid_for',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+        );
 
         if ($value < ValidFor::MIN_ACCESS_TIME) {
             $value = ValidFor::MIN_ACCESS_TIME;
@@ -69,6 +81,9 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
     public function getModifyTimestamp()
     {
-        return $this->scopeConfig->getValue('magepal_checkout/preview_success_page/modify_timestamp', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        return $this->scopeConfig->getValue(
+            'magepal_checkout/preview_success_page/modify_timestamp',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+        );
     }
 }
