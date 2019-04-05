@@ -2,45 +2,61 @@
 /**
  * Copyright © MagePal LLC. All rights reserved.
  * See COPYING.txt for license details.
- * http://www.magepal.com | support@magepal.com
+ * https://www.magepal.com | support@magepal.com
  */
 namespace MagePal\PreviewCheckoutSuccessPage\Plugin\Model\Session;
 
+use Magento\Checkout\Model\Session;
+use Magento\Checkout\Model\Session\SuccessValidator;
 use Magento\Framework\App\Config\ScopeConfigInterface;
+use Magento\Framework\App\RequestInterface;
+use Magento\Framework\DataObject;
+use Magento\Framework\Stdlib\DateTime\TimezoneInterface;
+use Magento\Sales\Model\Order;
+use Magento\Sales\Model\ResourceModel\Order\CollectionFactory;
+use MagePal\PreviewCheckoutSuccessPage\Helper\Data;
 
+/**
+ * Class SuccessValidatorPlugin
+ * @package MagePal\PreviewCheckoutSuccessPage\Plugin\Model\Session
+ */
 class SuccessValidatorPlugin
 {
 
-    /** @var \MagePal\PreviewCheckoutSuccessPage\Helper\Data */
+    /** @var Data */
     protected $dataHelper;
 
-    /** @var \Magento\Framework\App\RequestInterface */
+    /** @var RequestInterface */
     protected $request;
 
     /**
-     * @var \Magento\Checkout\Model\Session
+     * @var Session
      */
     protected $checkoutSession;
 
     /**
-     * @var \Magento\Sales\Model\ResourceModel\Order\CollectionFactory
+     * @var CollectionFactory
      */
     protected $orderCollectionFactory;
 
     /**
-     * @var \Magento\Framework\Stdlib\DateTime\TimezoneInterface
+     * @var TimezoneInterface
      */
     private $localeDate;
 
     /**
-     * @param \MagePal\PreviewCheckoutSuccessPage\Helper\Data $dataHelper
+     * @param Data $dataHelper
+     * @param RequestInterface $request
+     * @param Session $checkoutSession
+     * @param CollectionFactory $orderCollectionFactory
+     * @param TimezoneInterface $localeDate
      */
     public function __construct(
-        \MagePal\PreviewCheckoutSuccessPage\Helper\Data $dataHelper,
-        \Magento\Framework\App\RequestInterface $request,
-        \Magento\Checkout\Model\Session $checkoutSession,
-        \Magento\Sales\Model\ResourceModel\Order\CollectionFactory $orderCollectionFactory,
-        \Magento\Framework\Stdlib\DateTime\TimezoneInterface $localeDate
+        Data $dataHelper,
+        RequestInterface $request,
+        Session $checkoutSession,
+        CollectionFactory $orderCollectionFactory,
+        TimezoneInterface $localeDate
     ) {
         $this->dataHelper = $dataHelper;
         $this->request = $request;
@@ -49,13 +65,18 @@ class SuccessValidatorPlugin
         $this->localeDate = $localeDate;
     }
 
-    public function afterIsValid(\Magento\Checkout\Model\Session\SuccessValidator $subject, $result)
+    /**
+     * @param SuccessValidator $subject
+     * @param $result
+     * @return bool
+     */
+    public function afterIsValid(SuccessValidator $subject, $result)
     {
         if ($this->dataHelper->isEnabled()
             && $this->isValidAccessCode()
             && $this->dataHelper->getOrderIncrement()
         ) {
-            /** @var \Magento\Sales\Model\Order $order */
+            /** @var Order $order */
             $order = $this->getOrderByIncrementId($this->dataHelper->getOrderIncrement());
 
             if ($order->getId()) {
@@ -71,6 +92,10 @@ class SuccessValidatorPlugin
         return $result;
     }
 
+    /**
+     * @param $increment_id
+     * @return DataObject
+     */
     public function getOrderByIncrementId($increment_id)
     {
         $collection = $this->orderCollectionFactory->create();
@@ -80,6 +105,9 @@ class SuccessValidatorPlugin
         return $collection->getFirstItem();
     }
 
+    /**
+     * @return bool
+     */
     protected function isValidAccessCode()
     {
         $accessCode = $this->request->getParam('previewAccessCode', null);

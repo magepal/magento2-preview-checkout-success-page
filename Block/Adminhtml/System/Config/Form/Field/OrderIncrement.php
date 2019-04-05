@@ -2,7 +2,7 @@
 /**
  * Copyright © MagePal LLC. All rights reserved.
  * See COPYING.txt for license details.
- * http://www.magepal.com | support@magepal.com
+ * https://www.magepal.com | support@magepal.com
  */
 
 /**
@@ -12,17 +12,35 @@
  */
 namespace MagePal\PreviewCheckoutSuccessPage\Block\Adminhtml\System\Config\Form\Field;
 
-class OrderIncrement extends \Magento\Config\Block\System\Config\Form\Field
+use Magento\Backend\Block\Template\Context;
+use Magento\Config\Block\System\Config\Form\Field;
+use Magento\Framework\Data\Form\Element\AbstractElement;
+use Magento\Framework\DataObject;
+use Magento\Sales\Model\Order;
+use Magento\Sales\Model\ResourceModel\Order\CollectionFactory;
+use Magento\Store\Api\Data\StoreInterface;
+
+/**
+ * Class OrderIncrement
+ * @package MagePal\PreviewCheckoutSuccessPage\Block\Adminhtml\System\Config\Form\Field
+ */
+class OrderIncrement extends Field
 {
 
     /**
-     * @var \Magento\Sales\Model\ResourceModel\Order\CollectionFactory
+     * @var CollectionFactory
      */
     protected $orderCollectionFactory;
 
+    /**
+     * OrderIncrement constructor.
+     * @param Context $context
+     * @param CollectionFactory $orderCollectionFactory
+     * @param array $data
+     */
     public function __construct(
-        \Magento\Backend\Block\Template\Context $context,
-        \Magento\Sales\Model\ResourceModel\Order\CollectionFactory $orderCollectionFactory,
+        Context $context,
+        CollectionFactory $orderCollectionFactory,
         array $data = []
     ) {
         parent::__construct($context, $data);
@@ -32,16 +50,16 @@ class OrderIncrement extends \Magento\Config\Block\System\Config\Form\Field
     /**
      * Get the grid and scripts contents
      *
-     * @param \Magento\Framework\Data\Form\Element\AbstractElement $element
+     * @param AbstractElement $element
      * @return string
      */
-    protected function _getElementHtml(\Magento\Framework\Data\Form\Element\AbstractElement $element)
+    protected function _getElementHtml(AbstractElement $element)
     {
         $this->setElement($element);
 
         if (!$element->getEscapedValue()) {
 
-            /** @var \Magento\Sales\Model\Order $order */
+            /** @var Order $order */
             $order = $this->getLastOrder();
 
             if ($order->getId()) {
@@ -53,7 +71,7 @@ class OrderIncrement extends \Magento\Config\Block\System\Config\Form\Field
     }
 
     /**
-     * @return \Magento\Store\Api\Data\StoreInterface|null
+     * @return StoreInterface|null
      */
     public function getCurrentStore()
     {
@@ -70,7 +88,7 @@ class OrderIncrement extends \Magento\Config\Block\System\Config\Form\Field
     }
 
     /**
-     * @return \Magento\Framework\DataObject
+     * @return DataObject
      */
     public function getLastOrder()
     {

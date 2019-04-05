@@ -2,15 +2,20 @@
 /**
  * Copyright © MagePal LLC. All rights reserved.
  * See COPYING.txt for license details.
- * http://www.magepal.com | support@magepal.com
+ * https://www.magepal.com | support@magepal.com
  */
 
 namespace MagePal\PreviewCheckoutSuccessPage\Block\Adminhtml\System\Config\Form\Field;
 
+use Magento\Backend\Block\Template\Context;
 use Magento\Config\Block\System\Config\Form\Field;
+use Magento\Framework\Data\Form\Element\AbstractElement;
+use Magento\Framework\Url;
+use Magento\Store\Api\Data\StoreInterface;
 
 /**
- * Class Locations Backend system config array field renderer
+ * Class Preview
+ * @package MagePal\PreviewCheckoutSuccessPage\Block\Adminhtml\System\Config\Form\Field
  */
 class Preview extends Field
 {
@@ -20,19 +25,19 @@ class Preview extends Field
     protected $_template = 'MagePal_PreviewCheckoutSuccessPage::system/config/form/field/preview.phtml';
 
     /**
-     * @var \Magento\Framework\Url
+     * @var Url
      */
     protected $urlHelper;
 
     /**
      * Preview constructor.
-     * @param \Magento\Backend\Block\Template\Context $context
-     * @param \Magento\Framework\Url $urlHelper
+     * @param Context $context
+     * @param Url $urlHelper
      * @param array $data
      */
     public function __construct(
-        \Magento\Backend\Block\Template\Context $context,
-        \Magento\Framework\Url $urlHelper,
+        Context $context,
+        Url $urlHelper,
         array $data = []
     ) {
         $this->urlHelper = $urlHelper;
@@ -41,10 +46,10 @@ class Preview extends Field
 
 
     /**
-     * @param \Magento\Framework\Data\Form\Element\AbstractElement $element
+     * @param AbstractElement $element
      * @return string
      */
-    public function render(\Magento\Framework\Data\Form\Element\AbstractElement $element)
+    public function render(AbstractElement $element)
     {
         $element->unsScope()->unsCanUseWebsiteValue()->unsCanUseDefaultValue();
 
@@ -54,10 +59,10 @@ class Preview extends Field
     }
 
     /**
-     * @param \Magento\Framework\Data\Form\Element\AbstractElement $element
+     * @param AbstractElement $element
      * @return string
      */
-    protected function _renderValue(\Magento\Framework\Data\Form\Element\AbstractElement $element)
+    protected function _renderValue(AbstractElement $element)
     {
         return $this->_getElementHtml($element);
     }
@@ -65,10 +70,10 @@ class Preview extends Field
     /**
      * Get the grid and scripts contents
      *
-     * @param \Magento\Framework\Data\Form\Element\AbstractElement $element
+     * @param AbstractElement $element
      * @return string
      */
-    protected function _getElementHtml(\Magento\Framework\Data\Form\Element\AbstractElement $element)
+    protected function _getElementHtml(AbstractElement $element)
     {
         $this->setElement($element);
 
@@ -76,7 +81,7 @@ class Preview extends Field
     }
 
     /**
-     * @return \Magento\Store\Api\Data\StoreInterface|null
+     * @return StoreInterface|null
      */
     public function getCurrentStore()
     {

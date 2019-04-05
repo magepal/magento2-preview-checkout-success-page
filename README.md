@@ -1,4 +1,4 @@
-<a href="http://www.magepal.com" ><img src="https://image.ibb.co/dHBkYH/Magepal_logo.png" width="100" align="right" /></a>
+<a href="https://www.magepal.com" ><img src="https://image.ibb.co/dHBkYH/Magepal_logo.png" width="100" align="right" /></a>
 
 ## Preview Order Confirmation Page for Magento 2
 
@@ -7,12 +7,13 @@
 
 Styling and testing Magento's order confirmation page can be a very difficult and time-consuming process since the order success page display is only displayed once after completing the lengthy checkout process. Changing your page content or testing a new CSS style will automatically redirect you to an empty shopping cart page on page refresh.
 
-Our free magento2 extension allows you to quickly test [Google Universal Analytics (gtag.js)](https://www.magepal.com/magento2/extensions/google-universal-analytics-enhanced-ecommerce.html), [Google Tag Manager](https://www.magepal.com/magento2/extensions/google-tag-manager.html), [Enhanced Ecommerce](https://www.magepal.com/magento2/extensions/enhanced-ecommerce-for-google-tag-manager.html) or other [miscellaneous HTML, scripts and code snippets](https://www.magepal.com/magento2/extensions/order-confirmation-miscellaneous-scripts-for-magento-2.html). Easily preview and make changes to your success page without placing a new order or modifying Magento's core code, perfect for Magento frontend developers. After installing our extension you can navigate to the module preference in store configuration section and specify an order number and then preview the success page for that order, view HTML source and search for specific javascript snippet or share a link to preview on other devices. For security, the generated link is only valid for a short period of time which can be changed base on your needs.
+Our free magento2 extension allows you to quickly test [Google Tag Manager](https://www.magepal.com/magento2/extensions/google-tag-manager.html), [Enhanced Ecommerce](https://www.magepal.com/magento2/extensions/enhanced-ecommerce-for-google-tag-manager.html) or other [miscellaneous HTML, scripts and code snippets](https://www.magepal.com/magento2/extensions/order-confirmation-miscellaneous-scripts-for-magento-2.html). Easily preview and make changes to your success page without placing a new order or modifying Magento's core code, perfect for Magento frontend developers. After installing our extension you can navigate to the module preference in store configuration section and specify an order number and then preview the success page for that order, view HTML source and search for specific javascript snippet or share a link to preview on other devices. For security, the generated link is only valid for a short period of time which can be changed base on your needs.
 
 To avoid tracking of duplicate order information on your live site, you may want to limit usage and testing of our extension to your development environment with [Google Analytics](https://www.magepal.com/magento2/extensions/enhanced-ecommerce-for-google-tag-manager.html) and order tracking script disabled.
 
 ![How to test or style the order success page](https://image.ibb.co/h9ssDH/Preview_Checkout_Success_Page_for_Magento.gif)
 
+Design beautiful order confirmation page with our new [Enhanced Success Page](https://www.magepal.com/magento2/extensions/enhanced-success-page.html) extension.
 
 ### Features
 - Configure any order number you want to preview from admin.

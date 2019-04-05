@@ -2,22 +2,29 @@
 /**
  * Copyright © MagePal LLC. All rights reserved.
  * See COPYING.txt for license details.
- * http://www.magepal.com | support@magepal.com
+ * https://www.magepal.com | support@magepal.com
  */
 
 namespace MagePal\PreviewCheckoutSuccessPage\Helper;
 
+use Magento\Framework\App\Helper\AbstractHelper;
+use Magento\Framework\App\Helper\Context;
+use Magento\Store\Model\ScopeInterface;
 use MagePal\PreviewCheckoutSuccessPage\Model\Config\Backend\ValidFor;
 
-class Data extends \Magento\Framework\App\Helper\AbstractHelper
+/**
+ * Class Data
+ * @package MagePal\PreviewCheckoutSuccessPage\Helper
+ */
+class Data extends AbstractHelper
 {
     const XML_PATH_ACTIVE = 'magepal_checkout/preview_success_page/active';
 
     /**
-     * @param \Magento\Framework\App\Helper\Context $context
+     * @param Context $context
      */
     public function __construct(
-        \Magento\Framework\App\Helper\Context $context
+        Context $context
     ) {
         parent::__construct($context);
     }
@@ -31,7 +38,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     {
         return $this->scopeConfig->isSetFlag(
             self::XML_PATH_ACTIVE,
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+            ScopeInterface::SCOPE_STORE
         );
     }
 
@@ -43,7 +50,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     {
         return $this->scopeConfig->getValue(
             'magepal_checkout/preview_success_page/access_code',
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+            ScopeInterface::SCOPE_STORE
         );
     }
 
@@ -55,7 +62,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     {
         return $this->scopeConfig->getValue(
             'magepal_checkout/preview_success_page/order_increment',
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+            ScopeInterface::SCOPE_STORE
         );
     }
 
@@ -67,7 +74,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     {
         $value = $this->scopeConfig->getValue(
             'magepal_checkout/preview_success_page/valid_for',
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+            ScopeInterface::SCOPE_STORE
         );
 
         if ($value < ValidFor::MIN_ACCESS_TIME) {
@@ -79,11 +86,14 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         return $value;
     }
 
+    /**
+     * @return mixed
+     */
     public function getModifyTimestamp()
     {
         return $this->scopeConfig->getValue(
             'magepal_checkout/preview_success_page/modify_timestamp',
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+            ScopeInterface::SCOPE_STORE
         );
     }
 }
