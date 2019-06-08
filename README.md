@@ -17,7 +17,7 @@ To avoid tracking of duplicate order information on your live site, you may want
 
 ### Features
 - Configure any order number you want to preview from admin.
-- Quick and easily view checkout page source, inline with in admin or within a new browser window.
+- Quick and easily view checkout page source, in line within admin or within a new browser window.
 - Zero core hacks.
 - Created for testing sites but work perfectly on live/production environment.
 - Save time when style checkout success page.
