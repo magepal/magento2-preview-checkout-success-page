@@ -2,8 +2,11 @@
 
 # Preview Order Confirmation Page for Magento 2
 
+
 [![Total Downloads](https://poser.pugx.org/magepal/magento2-preview-checkout-success-page/downloads)](https://packagist.org/packages/magepal/magento2-preview-checkout-success-page)
 [![Latest Stable Version](https://poser.pugx.org/magepal/magento2-preview-checkout-success-page/v/stable)](https://packagist.org/packages/magepal/magento2-preview-checkout-success-page)
+
+For Magento 2.0.x, 2.1.x, 2.2.x and 2.3.x
 
 Styling and testing Magento's order confirmation page can be a very difficult and time-consuming process since the order success page display is only displayed once after completing the lengthy checkout process. Changing your page content or testing a new CSS style will automatically redirect you to an empty shopping cart page on page refresh.
 
