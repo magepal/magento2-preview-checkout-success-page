@@ -1,9 +1,12 @@
 <a href="https://www.magepal.com" ><img src="https://image.ibb.co/dHBkYH/Magepal_logo.png" width="100" align="right" /></a>
 
-## Preview Order Confirmation Page for Magento 2
+# Preview Order Confirmation Page for Magento 2
+
 
 [![Total Downloads](https://poser.pugx.org/magepal/magento2-preview-checkout-success-page/downloads)](https://www.magepal.com/preview-order-confirmation-page-for-magento-2.html)
 [![Latest Stable Version](https://poser.pugx.org/magepal/magento2-preview-checkout-success-page/v/stable)](https://www.magepal.com/preview-order-confirmation-page-for-magento-2.html)
+
+For Magento 2.0.x, 2.1.x, 2.2.x and 2.3.x
 
 Styling and testing Magento's order confirmation page can be a very difficult and time-consuming process since the order success page display is only displayed once after completing the lengthy checkout process. Changing your page content or testing a new CSS style will automatically redirect you to an empty shopping cart page on page refresh.
 
@@ -17,7 +20,7 @@ To avoid tracking of duplicate order information on your live site, you may want
 
 ### Features
 - Configure any order number you want to preview from admin.
-- Quick and easily view checkout page source, inline with in admin or within a new browser window.
+- Quick and easily view checkout page source, in line within admin or within a new browser window.
 - Zero core hacks.
 - Created for testing sites but work perfectly on live/production environment.
 - Save time when style checkout success page.
