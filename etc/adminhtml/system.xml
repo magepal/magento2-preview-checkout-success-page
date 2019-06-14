@@ -19,12 +19,39 @@
                 <label>Preview Success Page</label><attribute type="expanded">1</attribute>
                 <comment>
                     <![CDATA[
-                    <strong>Copyright © 2018 <a href="http://bit.ly/MPEXPCSP" target="_blank">www.magepal.com</a> / <a href="mailto:support@magepal.com">support@magepal.com</a></strong><br />
-                    Design beautiful order confirmation page with our new
-                    <a href="https://www.magepal.com/enhanced-success-page.html">Enhanced Success Page</a> extension.
-                    Thanks for choosing MagePal Extensions.<br/><br/>
+                    <div id="magepal-info-pcsp">
+                        Copyright © 2019 <a href="https://www.magepal.com/magento2/extensions.html?utm_source=preview-conformation-page&utm_medium=admin" target="_blank">MagePal, LLC</a>
+                        <a href="https://www.magepal.com/help/docs/preview-order-conformation-page-magento-2/?utm_source=preview-conformation-page&utm_medium=admin#documentation" target="_blank">Documentation</a>
+                        <a href="https://www.magepal.com/help/docs/preview-order-conformation-page-magento-2/?utm_source=preview-conformation-page&utm_medium=admin#support">Support</a>
+                        <a href="https://www.magepal.com/help/docs/preview-order-conformation-page-magento-2?utm_source=preview-conformation-page&utm_medium=admin#current_version" target="_blank">Latest Version</a>
+                        <a href="https://www.magepal.com/preview-order-confirmation-page-for-magento-2.html?utm_source=preview-conformation-page&utm_medium=admin" target="_blank">Extension Detail</a>
+                        <a href="https://www.magepal.com/magento2/extensions.html?utm_source=preview-conformation-page&utm_medium=admin" target="_blank">More Extensions</a>
+                    </div>
+                    <div>
+                    Design beautiful order confirmation page with our new <a href="https://www.magepal.com/enhanced-success-page.html">Enhanced Success Page</a> extension.
+                    </div>
                     <hr style="border-top: 1px solid #e3e3e3" />
-                  ]]>
+                    <style>
+                        #magepal-info-pcsp a {
+                            font-weight: bold;
+                            border-left: 2px solid #e3e3e3;
+                            padding-left:10px;
+                            padding-right:10px;
+                            color: #ef7e1e;
+                        }
+
+                        #magepal-info-pcsp a:first-child {
+                            padding-left: 5px;
+                            border-left: none;
+                        }
+
+                        #magepal-info-pcsp {
+                            padding-bottom: 5px;
+                        }
+                        .section-config.active #magepal_checkout_preview_success_page-head {
+                            padding-bottom: 0px;
+                        }
+                     </style>]]>
                 </comment>
                 <field id="module_version" translate="label" type="label" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Module Version</label>

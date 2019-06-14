@@ -2,8 +2,8 @@
 
 ## Preview Order Confirmation Page for Magento 2
 
-[![Total Downloads](https://poser.pugx.org/magepal/magento2-preview-checkout-success-page/downloads)](https://packagist.org/packages/magepal/magento2-preview-checkout-success-page)
-[![Latest Stable Version](https://poser.pugx.org/magepal/magento2-preview-checkout-success-page/v/stable)](https://packagist.org/packages/magepal/magento2-preview-checkout-success-page)
+[![Total Downloads](https://poser.pugx.org/magepal/magento2-preview-checkout-success-page/downloads)](https://www.magepal.com/preview-order-confirmation-page-for-magento-2.html)
+[![Latest Stable Version](https://poser.pugx.org/magepal/magento2-preview-checkout-success-page/v/stable)](https://www.magepal.com/preview-order-confirmation-page-for-magento-2.html)
 
 Styling and testing Magento's order confirmation page can be a very difficult and time-consuming process since the order success page display is only displayed once after completing the lengthy checkout process. Changing your page content or testing a new CSS style will automatically redirect you to an empty shopping cart page on page refresh.
 
@@ -26,31 +26,17 @@ To avoid tracking of duplicate order information on your live site, you may want
 
 This module was intended for development, testing, and staging environment. Please consider carefully before using in a production environment because it may affect your analytics/conversion data.
 
+## Documentation
+
+ - [How to Installing Order Success Page Previewer](https://www.magepal.com/help/docs/preview-order-conformation-page-magento-2/#installation)
+
+ - [How to Configure Order Confirmation Page Preview](https://www.magepal.com/help/docs/preview-order-conformation-page-magento-2/#configuration)
 
 ## Installation
-
-#### Step 1
-##### Using Composer (recommended)
 
 ```
 composer require magepal/magento2-preview-checkout-success-page
 ```
-
-
-##### Manual Installation
-To install Checkout Previewer for Magento2
- * Download the extension
- * Unzip the file
- * Create a folder {Magento root}/app/code/MagePal/PreviewCheckoutSuccessPage
- * Copy the content from the unzip folder
- * Flush cache
-
-#### Step 2 -  Enable Lazy Load for Magento2
- * php -f bin/magento module:enable --clear-static-content MagePal_PreviewCheckoutSuccessPage
- * php -f bin/magento setup:upgrade
-
-#### Step 3 - Config Checkout Previewer for Magento2
-Log into your Magento Admin, then goto Stores -> Configuration -> MagePal -> Checkout
 
 Contribution
 ---
@@ -63,8 +49,22 @@ If you encounter any problems or bugs, please open an issue on [GitHub](https://
 
 Need help setting up or want to customize this extension to meet your business needs? Please email support@magepal.com and if we like your idea we will add this feature for free or at a discounted rate.
 
-Other Extensions
+Magento 2 Extensions
 ---
-[Custom SMTP](https://www.magepal.com/magento2/extensions/custom-smtp.html) | [Google Tag Manager](https://www.magepal.com/magento2/extensions/google-tag-manager.html) | [Enhanced E-commerce](https://www.magepal.com/magento2/extensions/enhanced-ecommerce-for-google-tag-manager.html) | [Google Universal Analytics](https://www.magepal.com/magento2/extensions/google-universal-analytics-enhanced-ecommerce.html) | [Reindex](https://www.magepal.com/magento2/extensions/reindex.html) | [Custom Shipping Method](https://www.magepal.com/magento2/extensions/custom-shipping-rates-for-magento-2.html) | [Preview Order Confirmation](https://www.magepal.com/magento2/extensions/preview-order-confirmation-page-for-magento-2.html) | [Guest to Customer](https://www.magepal.com/magento2/extensions/guest-to-customer.html) | [Admin Form Fields Manager](https://www.magepal.com/magento2/extensions/admin-form-fields-manager-for-magento-2.html) | [Customer Dashboard Links Manager](https://www.magepal.com/magento2/extensions/customer-dashboard-links-manager-for-magento-2.html) | [Lazy Loader](https://www.magepal.com/magento2/extensions/lazy-load.html) | [Order Confirmation Page Miscellaneous Scripts](https://www.magepal.com/magento2/extensions/order-confirmation-miscellaneous-scripts-for-magento-2.html)
+- [Custom SMTP](https://www.magepal.com/magento2/extensions/custom-smtp.html)
+- [Catalog Hover Image for Magento](https://www.magepal.com/magento2/extensions/catalog-hover-image-for-magento.html)
+- [Enhanced Success Page for Magento 2](https://www.magepal.com/magento2/extensions/enhanced-success-page.html)
+- [Enhanced Transactional Emails for Magento 2](https://www.magepal.com/magento2/extensions/enhanced-transactional-emails.html)
+- [Google Tag Manager](https://www.magepal.com/magento2/extensions/google-tag-manager.html) 
+- [Enhanced E-commerce](https://www.magepal.com/magento2/extensions/enhanced-ecommerce-for-google-tag-manager.html) 
+- [Reindex](https://www.magepal.com/magento2/extensions/reindex.html) 
+- [Custom Shipping Method](https://www.magepal.com/magento2/extensions/custom-shipping-rates-for-magento-2.html) 
+- [Preview Order Confirmation](https://www.magepal.com/magento2/extensions/preview-order-confirmation-page-for-magento-2.html)
+- [Guest to Customer](https://www.magepal.com/magento2/extensions/guest-to-customer.html) 
+- [Admin Form Fields Manager](https://www.magepal.com/magento2/extensions/admin-form-fields-manager-for-magento-2.html) 
+- [Customer Dashboard Links Manager](https://www.magepal.com/magento2/extensions/customer-dashboard-links-manager-for-magento-2.html) 
+- [Lazy Loader](https://www.magepal.com/magento2/extensions/lazy-load.html) 
+- [Order Confirmation Page Miscellaneous Scripts](https://www.magepal.com/magento2/extensions/order-confirmation-miscellaneous-scripts-for-magento-2.html)
+- [HTML Minifier for Magento2](https://www.magepal.com/magento2/extensions/html-minifier.html)
 
 © MagePal LLC. | [www.magepal.com](http:/www.magepal.com)
