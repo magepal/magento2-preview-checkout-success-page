@@ -31,9 +31,9 @@ This module was intended for development, testing, and staging environment. Plea
 
 ## Documentation
 
- - [How to Installing Order Success Page Previewer](https://www.magepal.com/help/docs/preview-order-conformation-page-magento-2/#installation)
+ - [How to Installing Order Success Page Previewer](https://www.magepal.com/help/docs/preview-order-confirmation-page-magento-2/#installation)
 
- - [How to Configure Order Confirmation Page Preview](https://www.magepal.com/help/docs/preview-order-conformation-page-magento-2/#configuration)
+ - [How to Configure Order Confirmation Page Preview](https://www.magepal.com/help/docs/preview-order-confirmation-page-magento-2/#configuration)
 
 ## Installation
 
