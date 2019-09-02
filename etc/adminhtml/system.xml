@@ -83,14 +83,16 @@
                     <frontend_model>MagePal\PreviewCheckoutSuccessPage\Block\Adminhtml\System\Config\Form\Field\OrderIncrement</frontend_model>
                 </field>
 
-                <field id="modify_timestamp" translate="label" type="hidden" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+                <field id="modify_timestamp" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Hidden</label>
                     <backend_model>MagePal\PreviewCheckoutSuccessPage\Model\Config\Backend\ModifyTimestamp</backend_model>
                     <depends>
                         <field id="*/*/active">1</field>
                     </depends>
                 </field>
 
-                <field id="access_code" translate="label" type="hidden" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+                <field id="access_code" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Hidden</label>
                     <backend_model>MagePal\PreviewCheckoutSuccessPage\Model\Config\Backend\AccessCode</backend_model>
                     <depends>
                         <field id="*/*/active">1</field>

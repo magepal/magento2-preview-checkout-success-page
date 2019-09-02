@@ -56,6 +56,7 @@ class AccessCode extends Value
 
     /**
      * @return $this
+     * @throws \Magento\Framework\Exception\LocalizedException
      */
     public function beforeSave()
     {
