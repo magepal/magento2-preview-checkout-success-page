@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © MagePal LLC. All rights reserved.
+ * See COPYING.txt for license details.
+ * https://www.magepal.com | support@magepal.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <magepal_checkout>
+            <preview_success_page>
+                <valid_for>15</valid_for>
+            </preview_success_page>
+        </magepal_checkout>
+    </default>
+</config>
