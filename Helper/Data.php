@@ -12,22 +12,9 @@ use Magento\Framework\App\Helper\Context;
 use Magento\Store\Model\ScopeInterface;
 use MagePal\PreviewCheckoutSuccessPage\Model\Config\Backend\ValidFor;
 
-/**
- * Class Data
- * @package MagePal\PreviewCheckoutSuccessPage\Helper
- */
 class Data extends AbstractHelper
 {
     const XML_PATH_ACTIVE = 'magepal_checkout/preview_success_page/active';
-
-    /**
-     * @param Context $context
-     */
-    public function __construct(
-        Context $context
-    ) {
-        parent::__construct($context);
-    }
 
     /**
      * Whether is active

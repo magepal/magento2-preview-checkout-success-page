@@ -1,7 +1,7 @@
 var config = {
     map: {
         '*': {
-            checkoutSuccessMiscScript: 'MagePal_CheckoutSuccessMiscScript/js/checkout-success-misc-script'
+            previewCheckoutSuccessPage: 'MagePal_PreviewCheckoutSuccessPage/js/preview'
         }
     }
 };

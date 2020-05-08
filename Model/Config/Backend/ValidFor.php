@@ -8,10 +8,6 @@ namespace MagePal\PreviewCheckoutSuccessPage\Model\Config\Backend;
 
 use Magento\Framework\App\Config\Value;
 
-/**
- * Class ValidFor
- * @package MagePal\PreviewCheckoutSuccessPage\Model\Config\Backend
- */
 class ValidFor extends Value
 {
     const MAX_ACCESS_TIME = 15;

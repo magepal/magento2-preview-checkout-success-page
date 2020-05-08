@@ -16,13 +16,8 @@ use Magento\Sales\Model\Order;
 use Magento\Sales\Model\ResourceModel\Order\CollectionFactory;
 use MagePal\PreviewCheckoutSuccessPage\Helper\Data;
 
-/**
- * Class SuccessValidatorPlugin
- * @package MagePal\PreviewCheckoutSuccessPage\Plugin\Model\Session
- */
 class SuccessValidatorPlugin
 {
-
     /** @var Data */
     protected $dataHelper;
 

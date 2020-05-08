@@ -10,15 +10,12 @@ use Magento\Framework\App\Cache\TypeListInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\App\Config\Value;
 use Magento\Framework\Data\Collection\AbstractDb;
+use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Math\Random;
 use Magento\Framework\Model\Context;
 use Magento\Framework\Model\ResourceModel\AbstractResource;
 use Magento\Framework\Registry;
 
-/**
- * Class AccessCode
- * @package MagePal\PreviewCheckoutSuccessPage\Model\Config\Backend
- */
 class AccessCode extends Value
 {
 
@@ -34,9 +31,9 @@ class AccessCode extends Value
      * @param Registry $registry
      * @param ScopeConfigInterface $config
      * @param TypeListInterface $cacheTypeList
+     * @param Random $random
      * @param AbstractResource|null $resource
      * @param AbstractDb|null $resourceCollection
-     * @param Random $random
      * @param array $data
      */
     public function __construct(
@@ -44,11 +41,10 @@ class AccessCode extends Value
         Registry $registry,
         ScopeConfigInterface $config,
         TypeListInterface $cacheTypeList,
+        Random $random,
         AbstractResource $resource = null,
         AbstractDb $resourceCollection = null,
-        Random $random,
         array $data = []
-
     ) {
         $this->random = $random;
         parent::__construct($context, $registry, $config, $cacheTypeList, $resource, $resourceCollection, $data);
@@ -56,7 +52,7 @@ class AccessCode extends Value
 
     /**
      * @return $this
-     * @throws \Magento\Framework\Exception\LocalizedException
+     * @throws LocalizedException
      */
     public function beforeSave()
     {

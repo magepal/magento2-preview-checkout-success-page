@@ -13,10 +13,6 @@ use Magento\Framework\Data\Form\Element\AbstractElement;
 use Magento\Framework\Url;
 use Magento\Store\Api\Data\StoreInterface;
 
-/**
- * Class Preview
- * @package MagePal\PreviewCheckoutSuccessPage\Block\Adminhtml\System\Config\Form\Field
- */
 class Preview extends Field
 {
     /**
@@ -43,7 +39,6 @@ class Preview extends Field
         $this->urlHelper = $urlHelper;
         parent::__construct($context, $data);
     }
-
 
     /**
      * @param AbstractElement $element
@@ -114,5 +109,15 @@ class Preview extends Field
         ];
 
         return $this->urlHelper->setScope($store->getId())->getUrl('checkout/onepage/success', $routeParams);
+    }
+
+    /**
+     * @return string
+     */
+    public function getSpinnerTemplate()
+    {
+        $value = '<div data-role=\"spinner\" style=\"text-align: center\"><div class=\"spinner\"><span></span><span>';
+        $value .= '</span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>';
+        return $value;
     }
 }

@@ -18,13 +18,8 @@ use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Filesystem\Directory\ReadFactory;
 use Magento\Framework\Phrase;
 
-/**
- * Class Version
- * @package MagePal\PreviewCheckoutSuccessPage\Block\Adminhtml\System\Config\Form\Composer
- */
 class Version extends Field
 {
-
     /**
      * @var DeploymentConfig
      */
@@ -65,7 +60,6 @@ class Version extends Field
      *
      * @param  AbstractElement $element
      * @return string
-     * @throws LocalizedException
      */
     public function render(AbstractElement $element)
     {
@@ -97,16 +91,6 @@ class Version extends Field
     }
 
     /**
-     * @return string
-     */
-    public function getModuleName()
-    {
-        $classArray = explode('\\', get_class($this));
-
-        return count($classArray) > 2 ? "{$classArray[0]}_{$classArray[1]}" : '';
-    }
-
-    /**
      * Get module composer version
      *
      * @param $moduleName
@@ -128,7 +112,7 @@ class Version extends Field
                 return !empty($data->version) ? $data->version : __('Unknown');
             }
         } catch (Exception $e) {
-            //
+            return 'Unknown';
         }
 
         return 'Unknown';

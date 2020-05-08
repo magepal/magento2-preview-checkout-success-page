@@ -15,10 +15,6 @@ use Magento\Framework\Model\ResourceModel\AbstractResource;
 use Magento\Framework\Registry;
 use Magento\Framework\Stdlib\DateTime\TimezoneInterface;
 
-/**
- * Class ModifyTimestamp
- * @package MagePal\PreviewCheckoutSuccessPage\Model\Config\Backend
- */
 class ModifyTimestamp extends Value
 {
 
@@ -44,11 +40,10 @@ class ModifyTimestamp extends Value
         Registry $registry,
         ScopeConfigInterface $config,
         TypeListInterface $cacheTypeList,
+        TimezoneInterface $localeDate,
         AbstractResource $resource = null,
         AbstractDb $resourceCollection = null,
-        TimezoneInterface $localeDate,
         array $data = []
-
     ) {
         $this->localeDate = $localeDate;
         parent::__construct($context, $registry, $config, $cacheTypeList, $resource, $resourceCollection, $data);

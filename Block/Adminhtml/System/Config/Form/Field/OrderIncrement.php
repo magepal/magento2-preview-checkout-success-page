@@ -16,17 +16,19 @@ use Magento\Backend\Block\Template\Context;
 use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Data\Form\Element\AbstractElement;
 use Magento\Framework\DataObject;
+use Magento\Framework\Exception\LocalizedException;
+use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Sales\Model\Order;
 use Magento\Sales\Model\ResourceModel\Order\CollectionFactory;
 use Magento\Store\Api\Data\StoreInterface;
 
 /**
- * Class OrderIncrement
- * @package MagePal\PreviewCheckoutSuccessPage\Block\Adminhtml\System\Config\Form\Field
+ * @method setElement($element)
+ * @method getElement()
+ * @method getForm()
  */
 class OrderIncrement extends Field
 {
-
     /**
      * @var CollectionFactory
      */
@@ -50,21 +52,25 @@ class OrderIncrement extends Field
     /**
      * Get the grid and scripts contents
      *
-     * @param AbstractElement $element
+     * @param  AbstractElement  $element
      * @return string
      */
     protected function _getElementHtml(AbstractElement $element)
     {
         $this->setElement($element);
 
-        if (!$element->getEscapedValue()) {
+        try {
+            if (!$element->getEscapedValue()) {
 
-            /** @var Order $order */
-            $order = $this->getLastOrder();
+                /** @var Order $order */
+                $order = $this->getLastOrder();
 
-            if ($order->getId()) {
-                $element->setValue($order->getIncrementId());
+                if ($order->getId()) {
+                    $element->setValue($order->getIncrementId());
+                }
             }
+        } catch (\Exception $e) {
+            return parent::_getElementHtml($element);
         }
 
         return parent::_getElementHtml($element);
@@ -72,6 +78,9 @@ class OrderIncrement extends Field
 
     /**
      * @return StoreInterface|null
+     * @throws LocalizedException
+     * @throws NoSuchEntityException
+     * @return \Magento\Store\Api\Data\StoreInterface|null
      */
     public function getCurrentStore()
     {
@@ -89,6 +98,9 @@ class OrderIncrement extends Field
 
     /**
      * @return DataObject
+     * @throws LocalizedException
+     * @throws NoSuchEntityException
+     * @return Order
      */
     public function getLastOrder()
     {
