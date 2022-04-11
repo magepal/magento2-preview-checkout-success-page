@@ -19,8 +19,8 @@
                 <label>Preview Success Page</label><attribute type="expanded">1</attribute>
                 <comment>
                     <![CDATA[
-                    <div id="magepal-info-pcsp">
-                        Copyright © 2020 <a href="https://www.magepal.com/magento2/extensions.html?utm_source=preview-confirmation-page&utm_medium=admin" target="_blank">MagePal, LLC</a>
+                    <div class="magepal-info">
+                        Copyright © 2022 <a href="https://www.magepal.com/magento2/extensions.html?utm_source=preview-confirmation-page&utm_medium=admin" target="_blank">MagePal, LLC</a>
                         <a href="https://www.magepal.com/help/docs/preview-order-confirmation-page-magento-2/?utm_source=preview-confirmation-page&utm_medium=admin#documentation" target="_blank">Documentation</a>
                         <a href="https://www.magepal.com/help/docs/preview-order-confirmation-page-magento-2/?utm_source=preview-confirmation-page&utm_medium=admin#support">Support</a>
                         <a href="https://www.magepal.com/help/docs/preview-order-confirmation-page-magento-2?utm_source=preview-confirmation-page&utm_medium=admin#current_version" target="_blank">Latest Version</a>
@@ -30,32 +30,12 @@
                     <div>
                     Design beautiful order confirmation page with our new <a href="https://www.magepal.com/enhanced-success-page.html">Enhanced Success Page</a> extension.
                     </div>
-                    <hr style="border-top: 1px solid #e3e3e3" />
-                    <style>
-                        #magepal-info-pcsp a {
-                            font-weight: bold;
-                            border-left: 2px solid #e3e3e3;
-                            padding-left:10px;
-                            padding-right:10px;
-                            color: #ef7e1e;
-                        }
-
-                        #magepal-info-pcsp a:first-child {
-                            padding-left: 5px;
-                            border-left: none;
-                        }
-
-                        #magepal-info-pcsp {
-                            padding-bottom: 5px;
-                        }
-                        .section-config.active #magepal_checkout_preview_success_page-head {
-                            padding-bottom: 0px;
-                        }
-                     </style>]]>
+                    <hr class="magepal-hr" />
+                    ]]>
                 </comment>
-                <field id="composer_version" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="MagePal_PreviewCheckoutSuccessPage" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Composer Version</label>
-                    <frontend_model>MagePal\PreviewCheckoutSuccessPage\Block\Adminhtml\System\Config\Form\Composer\Version</frontend_model>
+                    <frontend_model>MagePal\Core\Block\Adminhtml\System\Config\Composer\Version</frontend_model>
                 </field>
                 <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
                     <label>Enable</label>
