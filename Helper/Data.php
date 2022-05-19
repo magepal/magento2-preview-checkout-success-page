@@ -9,12 +9,29 @@ namespace MagePal\PreviewCheckoutSuccessPage\Helper;
 
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Framework\App\Helper\Context;
+use Magento\Framework\Stdlib\DateTime\DateTime;
 use Magento\Store\Model\ScopeInterface;
 use MagePal\PreviewCheckoutSuccessPage\Model\Config\Backend\ValidFor;
 
 class Data extends AbstractHelper
 {
     const XML_PATH_ACTIVE = 'magepal_checkout/preview_success_page/active';
+    /**
+     * @var DateTime
+     */
+    private $dateTime;
+
+    /**
+     * @param Context $context
+     * @param DateTime $dateTime
+     */
+    public function __construct(
+        Context $context,
+        DateTime $dateTime
+    ) {
+        parent::__construct($context);
+        $this->dateTime = $dateTime;
+    }
 
     /**
      * Whether is active
@@ -82,5 +99,13 @@ class Data extends AbstractHelper
             'magepal_checkout/preview_success_page/modify_timestamp',
             ScopeInterface::SCOPE_STORE
         );
+    }
+
+    /**
+     * @return false|int
+     */
+    public function getTimeStamp()
+    {
+        return strtotime($this->dateTime->gmtDate());
     }
 }

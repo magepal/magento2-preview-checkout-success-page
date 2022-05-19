@@ -44,20 +44,17 @@ class SuccessValidatorPlugin
      * @param RequestInterface $request
      * @param Session $checkoutSession
      * @param CollectionFactory $orderCollectionFactory
-     * @param TimezoneInterface $localeDate
      */
     public function __construct(
         Data $dataHelper,
         RequestInterface $request,
         Session $checkoutSession,
-        CollectionFactory $orderCollectionFactory,
-        TimezoneInterface $localeDate
+        CollectionFactory $orderCollectionFactory
     ) {
         $this->dataHelper = $dataHelper;
         $this->request = $request;
         $this->checkoutSession = $checkoutSession;
         $this->orderCollectionFactory = $orderCollectionFactory;
-        $this->localeDate = $localeDate;
     }
 
     /**
@@ -106,11 +103,11 @@ class SuccessValidatorPlugin
     protected function isValidAccessCode()
     {
         $accessCode = $this->request->getParam('previewAccessCode', null);
+        $validUntil = $this->dataHelper->getModifyTimestamp() + 60 * $this->dataHelper->getValidFor();
 
         if ($accessCode
             && $accessCode === $this->dataHelper->getAccessCode()
-            && ($this->dataHelper->getModifyTimestamp() + 60 * $this->dataHelper->getValidFor())
-                > $this->localeDate->scopeTimeStamp(ScopeConfigInterface::SCOPE_TYPE_DEFAULT)
+            && $validUntil > $this->dataHelper->getTimeStamp()
         ) {
             return true;
         }
