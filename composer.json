@@ -41,7 +41,7 @@
         "magepal/magento2-checkout-success-misc-script":"Add miscellaneous HTML and scripts to your checkout success page"
     },
     "type": "magento2-module",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "autoload": {
         "files": [
             "registration.php"
