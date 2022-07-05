@@ -13,7 +13,7 @@
 				<resource id="Magento_Backend::stores">
 					<resource id="Magento_Backend::stores_settings">
 						<resource id="Magento_Config::config">
-							<resource id="MagePal_CheckoutSuccessMiscScript::config_magepal_previewcheckoutsuccesspage" title="Preview Checkout Success Page"/>
+							<resource id="MagePal_PreviewCheckoutSuccessPage::config_magepal_previewcheckoutsuccesspage" title="Preview Checkout Success Page"/>
 						</resource>
 					</resource>
 				</resource>
