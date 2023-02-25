@@ -23,8 +23,8 @@ define([
                     var $accessCode = $result.find('#magepal_checkout_preview_success_page_access_code');
                     var $orderIncrement = $result.find('#magepal_checkout_preview_success_page_order_increment');
 
-                    if ($accessCode.size() && $accessCode.val()
-                        && $orderIncrement.size() && $orderIncrement.val()
+                    if ($accessCode.length && $accessCode.val()
+                        && $orderIncrement.length && $orderIncrement.val()
                     ) {
                         url = urlTemplate.replace("--previewAccessCode--", $accessCode.val());
                     }
