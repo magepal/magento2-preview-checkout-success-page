@@ -30,9 +30,9 @@ class ModifyTimestamp extends Value
      * @param Registry $registry
      * @param ScopeConfigInterface $config
      * @param TypeListInterface $cacheTypeList
+     * @param Data $dataHelper
      * @param AbstractResource|null $resource
      * @param AbstractDb|null $resourceCollection
-     * @param Data $dataHelper
      * @param array $data
      */
     public function __construct(
@@ -40,9 +40,9 @@ class ModifyTimestamp extends Value
         Registry $registry,
         ScopeConfigInterface $config,
         TypeListInterface $cacheTypeList,
-        AbstractResource $resource = null,
-        AbstractDb $resourceCollection = null,
         Data $dataHelper,
+        ?AbstractResource $resource = null,
+        ?AbstractDb $resourceCollection = null,
         array $data = []
     ) {
         $this->dataHelper = $dataHelper;

@@ -42,8 +42,8 @@ class AccessCode extends Value
         ScopeConfigInterface $config,
         TypeListInterface $cacheTypeList,
         Random $random,
-        AbstractResource $resource = null,
-        AbstractDb $resourceCollection = null,
+        ?AbstractResource $resource = null,
+        ?AbstractDb $resourceCollection = null,
         array $data = []
     ) {
         $this->random = $random;
